@@ -1,6 +1,6 @@
-import { Query } from "type-graphql";
+import { Query, Resolver } from "type-graphql";
 
-@Resolver
+@Resolver()
 export class UserResolver {
   @Query(() => String)
   async hello() {
