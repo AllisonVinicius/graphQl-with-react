@@ -1,4 +1,4 @@
-import { Mutation, Query, Resolver } from "type-graphql";
+import { Arg, Mutation, Query, Resolver } from "type-graphql";
 import { User } from "../model/User";
 
 //query: buscar dados
@@ -13,8 +13,11 @@ export class UserResoler {
   }
 
   @Mutation(() => User)
-  async createUser() {
-    const user = { id: "1", name: "Allison" };
+  async createUser(
+    @Arg('name') name: string
+  ){
+    
+    const user = { id: "1", name: };
 
     this.data.push(user);
 
